@@ -196,6 +196,7 @@ ro.vendor.extension_library=libqti-perfd-client.so
 ro.vendor.use_data_netmgrd=true
 persist.data.netmgrd.qos.enable=true
 persist.vendor.data.mode=concurrent
+ro.vendor.perf.scroll_opt=true
 
 # Radio
 DEVICE_PROVISIONED=1
