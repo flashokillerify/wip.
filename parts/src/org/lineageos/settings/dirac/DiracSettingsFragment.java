@@ -16,17 +16,22 @@
 
 package org.lineageos.settings.dirac;
 
+<<<<<<< HEAD
 import android.app.ActionBar;
+=======
+import android.app.Activity;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
+>>>>>>> 36c7c00a (olivewood: parts: Adapt to S style)
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.LayoutInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.CompoundButton;
 import android.widget.Switch;
+<<<<<<< HEAD
 import android.widget.TextView;
 
+=======
+>>>>>>> 36c7c00a (olivewood: parts: Adapt to S style)
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
@@ -35,14 +40,22 @@ import androidx.preference.SwitchPreference;
 
 import org.lineageos.settings.R;
 
+import com.android.settingslib.widget.MainSwitchPreference;
+import com.android.settingslib.widget.OnMainSwitchChangeListener;
+
 public class DiracSettingsFragment extends PreferenceFragment implements
+<<<<<<< HEAD
         Preference.OnPreferenceChangeListener, CompoundButton.OnCheckedChangeListener {
+=======
+        OnPreferenceChangeListener, OnMainSwitchChangeListener {
+
+>>>>>>> 36c7c00a (olivewood: parts: Adapt to S style)
 
     private static final String PREF_HEADSET = "dirac_headset_pref";
     private static final String PREF_PRESET = "dirac_preset_pref";
+    private static final String PREF_ENABLE = "dirac_enable";
 
-    private TextView mTextView;
-    private View mSwitchBar;
+    private MainSwitchPreference mSwitchBar;
 
     private ListPreference mHeadsetType;
     private ListPreference mPreset;
@@ -61,6 +74,10 @@ public class DiracSettingsFragment extends PreferenceFragment implements
 
         boolean enhancerEnabled = mDiracUtils.isDiracEnabled();
 
+        mSwitchBar = (MainSwitchPreference) findPreference(PREF_ENABLE);
+        mSwitchBar.addOnSwitchChangeListener(this);
+        mSwitchBar.setChecked(enhancerEnabled);
+
         mHeadsetType = (ListPreference) findPreference(PREF_HEADSET);
         mHeadsetType.setOnPreferenceChangeListener(this);
         mHeadsetType.setEnabled(enhancerEnabled);
@@ -71,6 +88,7 @@ public class DiracSettingsFragment extends PreferenceFragment implements
     }
 
     @Override
+<<<<<<< HEAD
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
         final View view = LayoutInflater.from(getContext()).inflate(R.layout.dirac,
@@ -101,6 +119,8 @@ public class DiracSettingsFragment extends PreferenceFragment implements
     }
 
     @Override
+=======
+>>>>>>> 36c7c00a (olivewood: parts: Adapt to S style)
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         switch (preference.getKey()) {
             case PREF_HEADSET:
@@ -115,10 +135,16 @@ public class DiracSettingsFragment extends PreferenceFragment implements
     }
 
     @Override
+<<<<<<< HEAD
     public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
         mDiracUtils.setEnabled(isChecked);
         mTextView.setText(getString(isChecked ? R.string.switch_bar_on : R.string.switch_bar_off));
         if (isChecked) {
+=======
+    public void onSwitchChanged(Switch switchView, boolean isChecked) {
+        mSwitchBar.setChecked(isChecked);
+        if (isChecked){
+>>>>>>> 36c7c00a (olivewood: parts: Adapt to S style)
             mSwitchBar.setEnabled(false);
             mHandler.postDelayed(new Runnable() {
                 @Override
@@ -139,14 +165,5 @@ public class DiracSettingsFragment extends PreferenceFragment implements
         mSwitchBar.setActivated(enabled);
         mHeadsetType.setEnabled(enabled);
         mPreset.setEnabled(enabled);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            getActivity().onBackPressed();
-            return true;
-        }
-        return false;
     }
 }

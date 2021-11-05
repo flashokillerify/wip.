@@ -14,6 +14,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
+<<<<<<< HEAD
 <resources>
     <!-- Thermal Profiles -->
     <string name="thermal_title">Thermal Profiles</string>
@@ -28,6 +29,28 @@
 
     <!-- Dirac settings -->
     <string name="dirac_title">Mi Sound Enhancer</string>
+=======
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Ambient settings -->
+    <string name="ambient_enable">Use ambient display</string>
+
+    <!-- Audio amplification -->
+    <string name="audio_title">Audio Amplification</string>
+    <string name="audio_summary">Sound control settings</string>
+    <string name="headphone_gain">Headphone gain</string>
+    <string name="microphone_gain">Microphone gain</string>
+    <string name="speaker_gain">Speaker gain</string>
+
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">Value: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">Default</string>
+    <string name="custom_seekbar_default_value_to_set">Default value: <xliff:g id="v">%s</xliff:g>\nLong press to set</string>
+    <string name="custom_seekbar_default_value_is_set">Default value is set</string>
+
+    <!-- Dirac settings -->
+    <string name="dirac_enable">Enable dirac</string>
+    <string name="dirac_title">Dirac™ Sound</string>
+>>>>>>> 36c7c00a (olivewood: parts: Adapt to S style)
     <string name="dirac_summary">Optimize audio quality</string>
     <string name="dirac_headset_title">Choose headphones type</string>
     <string name="dirac_preset_title">Choose a preset</string>

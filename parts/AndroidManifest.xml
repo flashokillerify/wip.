@@ -33,7 +33,12 @@
 
     <application
         android:label="@string/device_settings_app_name"
+<<<<<<< HEAD
         android:persistent="true">
+=======
+        android:persistent="true"
+        android:theme="@style/Theme.SubSettingsBase">
+>>>>>>> 36c7c00a (olivewood: parts: Adapt to S style)
 
         <receiver android:name=".BootCompletedReceiver">
             <intent-filter android:priority="1000">
@@ -45,7 +50,11 @@
         <activity
             android:name=".dirac.DiracActivity"
             android:label="@string/dirac_title"
+<<<<<<< HEAD
             android:theme="@style/Theme.Main">
+=======
+            android:theme="@style/Theme.SubSettingsBase">
+>>>>>>> 36c7c00a (olivewood: parts: Adapt to S style)
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
@@ -54,6 +63,7 @@
             <meta-data android:name="com.android.settings.summary"
                        android:resource="@string/dirac_summary" />
         </activity>
+<<<<<<< HEAD
         
         <service android:name=".doze.DozeService"
                  android:permission="XiaomiDozeService">
@@ -63,6 +73,28 @@
             android:name=".doze.DozeSettingsActivity"
             android:label="@string/ambient_display_title"
             android:theme="@style/Theme.Main">
+=======
+ 
+        <activity
+            android:name=".soundcontrol.SoundControlSettingsActivity"
+            android:exported="false"
+            android:label="@string/audio_title"
+            android:theme="@style/Theme.SubSettingsBase">
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.category"
+                       android:value="com.android.settings.category.ia.sound" />
+            <meta-data android:name="com.android.settings.summary"
+                       android:resource="@string/audio_summary" />
+        </activity>
+
+        <activity
+            android:name=".torch.TorchSettingsActivity"
+            android:exported="false"
+            android:label="@string/torch_title"
+            android:theme="@style/Theme.SubSettingsBase">
+>>>>>>> 36c7c00a (olivewood: parts: Adapt to S style)
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
@@ -72,9 +104,15 @@
         </activity>
 
         <activity
+<<<<<<< HEAD
             android:name=".thermal.ThermalActivity"
             android:label="@string/thermal_title"
             android:theme="@style/Theme.Main">
+=======
+            android:name=".doze.DozeSettingsActivity"
+            android:label="@string/ambient_display_title"
+	    android:theme="@style/Theme.SubSettingsBase">
+>>>>>>> 36c7c00a (olivewood: parts: Adapt to S style)
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
